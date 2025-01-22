@@ -44,7 +44,7 @@ def report():
 def images():
         arg = request.args.get('proj')
         arg2 = request.args.get('get_image')
-        return send_file(savepath + f'/modules/data/{arg}/{arg2}/output/screenshot/{arg2}/{os.listdir(f'modules/data/{arg}/{arg2}/output/screenshot/{arg2}')[0]}')
+        return open(savepath + f'/modules/data/{arg}/{arg2}/output/screenshot/{arg2}/{os.listdir(f'modules/data/{arg}/{arg2}/output/screenshot/{arg2}')[0]}', 'r').read()
 @app.route('/start_scan')
 def start_scan():
       return send_file(savepath + f'/page/start_scan.html') 
@@ -92,7 +92,7 @@ def scan():
                 <div class="report">
                 <img src="http://127.0.0.1:4444/get_images?get_image={subdomains_no_url}&proj={project_name}" alt="image">
                 <div class="url">{subdomain_url}</div><br>
-                <div class="dir_number">Número de Diretórios: {len(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories')}</div><br>
+                <div class="dir_number">Directories Number: {len(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories')}</div><br>
                 <div class="response_code">Status Code: {requests.get(subdomain_url).status_code}</div><br>
                 <div class="firewall">Firewall: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall","r").read()}</div><br>
                 <div class="services">SERVICES: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/services", 'r').read()}</div><br>
