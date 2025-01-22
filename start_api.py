@@ -93,8 +93,8 @@ def scan():
                 <div class="url">{subdomain_url}</div><br>
                 <div class="dir_number">Directories Number: {len(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories')}</div><br>
                 <div class="response_code">Status Code: {requests.get(subdomain_url).status_code}</div><br>
-                <div class="firewall">Firewall: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall","r").read()}</div><br>
-                <div class="services">SERVICES: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/services", 'r').read()}</div><br>
+                <div class="firewall">Firewall: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall","r").read().replace('[+] The site [1;94m','').replace(subdomain_url, '').replace('[0m is behind [1;96m','').replace('[0m WAF.','')}</div><br>
+                <div class="services">SERVICES: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/services", 'r').read().replace('[[35m','').replace(subdomain_url,'').replace('[0m]','')}</div><br>
                 <button onmousedown="var request = new XMLHttpRequest(); 
 
         request.onreadystatechange = function() {{
@@ -132,10 +132,10 @@ def scan():
         <h1>Open ports</h1>
             {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/open_ports", "r").read()}
         <h1>
-        FIREWALL: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall", 'r').read()}
+        FIREWALL: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall","r").read().replace('[+] The site [1;94m','').replace(subdomain_url, '').replace('[0m is behind [1;96m','').replace('[0m WAF.','')}
         </h1>
         <h1>Services</h1>
-        {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/services", "r").read()}
+        {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/services", 'r').read().replace('[[35m','').replace(subdomain_url,'').replace('[0m]','')}
         </div>
         <br>
 
