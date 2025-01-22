@@ -44,7 +44,7 @@ def report():
 def images():
         arg = request.args.get('proj')
         arg2 = request.args.get('get_image')
-        return send_file(savepath + f'modules/data/{arg}/{arg2}/output/screenshot/{arg2}/{os.listdir(f'modules/data/{arg}/{arg2}/output/screenshot/{arg2}')[0]}')
+        return send_file(savepath + f'/modules/data/{arg}/{arg2}/output/screenshot/{arg2}/{os.listdir(f'modules/data/{arg}/{arg2}/output/screenshot/{arg2}')[0]}')
 @app.route('/start_scan')
 def start_scan():
       return send_file(savepath + f'/page/start_scan.html') 
