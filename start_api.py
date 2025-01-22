@@ -5,6 +5,8 @@ import requests
 
 #PLEASE, MAKE SURE THIS FILE OS CONFIGURED
 savepath = '/home/user/WebDiver_light_scanner'
+IP = 'https://127.0.0.1:4444'
+
 from flask_cors import CORS
 
 working = False
@@ -89,7 +91,7 @@ def scan():
                 os.system(f'sudo wafw00f ' + subdomain_url + ' | grep "behind" | tee -a ' + savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall")
                 REPORT = f"""        
                 <div class="report">
-                <img src="http://127.0.0.1:4444/get_images?get_image={subdomains_no_url}&proj={project_name}" alt="image">
+                <img src="{IP}/get_images?get_image={subdomains_no_url}&proj={project_name}" alt="image">
                 <div class="url">{subdomain_url}</div><br>
                 <div class="dir_number">Directories Number: {len(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories')}</div><br>
                 <div class="response_code">Status Code: {requests.get(subdomain_url).status_code}</div><br>
@@ -107,7 +109,7 @@ def scan():
                     }}
             }}
         }}
-        request.open('GET', 'http://127.0.0.1:4444/reporter?project={project_name}&subdomain={subdomains_no_url}', true);
+        request.open('GET', '{IP}/reporter?project={project_name}&subdomain={subdomains_no_url}', true);
         request.send();">SHOW FULL REPORT</button>
                 <br><br><br><br>
                 </div>"""
@@ -128,7 +130,7 @@ def scan():
         <a class="anchor" href="../">Voltar</a>
         <div class="report_complete">
         <h1 class="report_from">Report From {project_name}</h1>
-        <a href="{subdomain_url}">           <img class="report_image" src="http://127.0.0.1:4444/get_images?get_image={subdomains_no_url}&proj={project_name}" alt=""></a>
+        <a href="{subdomain_url}">           <img class="report_image" src="{IP}/get_images?get_image={subdomains_no_url}&proj={project_name}" alt=""></a>
         <h1>Open ports</h1>
             {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/open_ports", "r").read()}
         <h1>
