@@ -1,4 +1,4 @@
-import time
+himport time
 import os
 from flask import Flask as fk, send_file, jsonify, request
 import requests
@@ -44,7 +44,7 @@ def report():
 def images():
         arg = request.args.get('proj')
         arg2 = request.args.get('get_image')
-        return open(savepath + f'/modules/data/{arg}/{arg2}/output/screenshot/{arg2}/{os.listdir(f'modules/data/{arg}/{arg2}/output/screenshot/{arg2}')[0]}', 'r').read()
+        return open(savepath + f'/modules/data/{arg}/{arg2}/output/screenshot/{arg2}/{os.listdir(savepath + f'/modules/data/{arg}/{arg2}/output/screenshot/{arg2}')[0]}', 'r').read()
 @app.route('/start_scan')
 def start_scan():
       return send_file(savepath + f'/page/start_scan.html') 
