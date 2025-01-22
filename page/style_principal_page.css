@@ -1,0 +1,76 @@
+.report_from {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 30px;
+    height: auto;
+    color: white;
+}
+body {
+    background-color: rgb(23, 23, 141);
+}
+img {
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    float: left;
+}
+.reports {
+    background-color: white;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.url {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: black;
+}
+.report {
+    color: black;
+    font-size: 12px;
+}
+a {
+    text-decoration: none !important;
+    color: black;
+}
+.report_image {
+    width: 50%;
+    text-align: center;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.report_complete {
+    margin-left: auto;
+    margin-right: auto;
+}
+.collector {
+    
+    color: black;
+    text-align: center;
+}
+.button {
+    font-size: 150%;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 10px;
+    cursor: pointer;
+}
+input {
+    font-size: 150%;
+    background-color: white; 
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+.new {
+    text-align: center;
+
+    cursor: pointer;
+}
+.anchor {
+    width: 1px;
+    height: 1px;
+    border: 1px solid blue;
+    background-color: white;
+}

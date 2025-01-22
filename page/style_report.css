@@ -1,0 +1,50 @@
+.report_from {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 30px;
+    height: auto;
+    color: white;
+}
+body {
+    background-color: rgb(23, 23, 141);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+img {
+    border-radius: 10px;
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.vuln_report {
+    float: left;
+    background-color: white;
+    border-width:2px;
+    border-style:solid;
+    border-color:black;
+}
+.dir_collected {
+    float: right;
+    background-color: white;
+    border-width:2px;
+    border-style:solid;
+    border-color:black;
+}
+.report_complete {
+    background-color: white;
+}
+.anchor {
+    color: white;
+    font-size: 200%;
+    border-width:2px;
+    border-style:solid;
+    border-color:black;
+    background-color: black;
+    border-radius: 10px;
+    
+}
+a {
+    text-decoration: none;
+
+}
