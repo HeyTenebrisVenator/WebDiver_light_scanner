@@ -4,13 +4,17 @@ from flask import Flask as fk, send_file, jsonify, request
 import requests
 
 
-
-
 #PLEASE, MAKE SURE THIS FILE OS CONFIGURED
-savepath = '/home/user/WebDiver'
+savepath = '/home/user/WebDiver_light_scanner'
 from flask_cors import CORS
 
 working = False
+
+try:
+        os.mkdir(savepath + '/modules')
+        os.mkdir(savepath + '/modules/data')
+except:
+        pass
 
 app = fk(__name__)
 cors = CORS(app)
