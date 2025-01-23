@@ -80,6 +80,7 @@ def scan():
 
             file = open(savepath + '/modules/data/' + project_name + '/filtered')
             for subdomain_url in file:
+                                directories = ''
                                 status_code = 0
                                 try:
                                         subdomain_url = subdomain_url.replace('\n', '')
@@ -95,6 +96,8 @@ def scan():
                                                 os.system('sudo waybackurls -no-subs ' + subdomains_no_url + '| tee -a '  + savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories')
                                                 os.system(f'sudo nmap -T3 -sV -p 21,22,23,25,53,80,110,111,143,139,443,445,3306,3389,5900,8080,8443 ' + subdomains_no_url + ' | grep "open" | tee -a ' + savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/open_ports")
                                                 os.system(f'sudo wafw00f ' + subdomain_url + ' | grep "behind" | tee -a ' + savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall")
+                                                for dir in open(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories', 'r').readlines():
+                                                        directories += dir.replace('\n', '') + '<br>'
                                                 status_code = requests.get(subdomain_url).status_code
                                                 REPORT = f"""        
                                                 <div class="report">
@@ -149,7 +152,7 @@ def scan():
                                         <br>
                                         <div class="dir_collected">
                                         <h1>Directories Collected</h1>
-                                        {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/directories", "r").read().replace(' ', '\n')}
+                                        {directories}
                                         </div>
                                 </body>
                                 </html>
@@ -159,7 +162,7 @@ def scan():
                                         else:
                                                 pass
                                 except:
+                                        print('errors')
                                         pass
         return 'OK'
 app.run(debug=True, host='0.0.0.0', port=4444)
-
