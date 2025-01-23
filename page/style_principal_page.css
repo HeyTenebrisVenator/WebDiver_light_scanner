@@ -74,3 +74,10 @@ input {
     border: 1px solid blue;
     background-color: white;
 }
+textarea {
+    width: 25%;
+    height: 150px;
+    font-size: 150%;
+    resize: none;
+    border-radius: 10px;
+}
