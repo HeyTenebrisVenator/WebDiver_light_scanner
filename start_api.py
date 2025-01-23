@@ -158,6 +158,5 @@ def scan():
                                 except:
                                         pass
 
-                return 'Complete!!!'
 app.run(debug=True, host='0.0.0.0', port=4444)
 
