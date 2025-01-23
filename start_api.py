@@ -51,7 +51,7 @@ def start_scan():
       return send_file(savepath + f'/page/start_scan.html') 
 @app.route('/scan')
 def scan():
-        if 1==1:
+        try:
             project_name = request.args.get('name')
             try:
                 os.mkdir(savepath + '/modules/data/' + project_name)
@@ -142,5 +142,6 @@ def scan():
                 print(Report2)
                 open(savepath + "/modules/data/" + project_name + "/report_" + subdomains_no_url, 'a').write(Report2 + '\n') 
             return 'Complete!!!'
-
+        except:
+                pass
 app.run(debug=True, host='0.0.0.0', port=4444)
