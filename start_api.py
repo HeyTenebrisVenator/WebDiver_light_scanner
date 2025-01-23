@@ -98,7 +98,10 @@ def scan():
                                                 os.system(f'sudo wafw00f ' + subdomain_url + ' | grep "behind" | tee -a ' + savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall")
                                                 for dir in open(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories', 'r').readlines():
                                                         directories += dir.replace('\n', '') + '<br>'
-                                                status_code = requests.get(subdomain_url).status_code
+                                                try:
+                                                        status_code = requests.get(subdomain_url).status_code
+                                                except:
+                                                        status_code = 'ERROR'
                                                 REPORT = f"""        
                                                 <div class="report">
                                                 <img src="{IP}/get_images?get_image={subdomains_no_url}&proj={project_name}" alt="image">
