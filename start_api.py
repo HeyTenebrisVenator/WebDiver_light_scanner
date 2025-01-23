@@ -53,7 +53,7 @@ def start_scan():
 def scan():
         if 1==1:
             try:
-                   out_of_scope = request.args.get('out').split(',')
+                   out_of_scope = request.args.get('out').replace(',', ' ')
             except:
                    pass
             project_name = request.args.get('name')
