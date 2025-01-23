@@ -64,7 +64,7 @@ def scan():
                   open(savepath + '/modules/data/' + project_name + '/wildcards','a').write(data + '\n')
             print('starting')
             os.system('sudo subfinder -silent -dL ' + savepath + '/modules/data/' + project_name + '/wildcards | tee -a ' + savepath + '/modules/data/' + project_name + '/subdomains')
-            os.system('sudo httpx -fc 403,404 -l ' + savepath + '/modules/data/' + project_name + '/subdomains | tee -a ' + savepath + '/modules/data/' + project_name + '/filtered')
+            os.system('sudo httpx -fc 404 -l ' + savepath + '/modules/data/' + project_name + '/subdomains | tee -a ' + savepath + '/modules/data/' + project_name + '/filtered')
 
 
             file = open(savepath + '/modules/data/' + project_name + '/filtered')
