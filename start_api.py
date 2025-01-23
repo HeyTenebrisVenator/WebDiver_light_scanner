@@ -155,5 +155,7 @@ def scan():
                                 open(savepath + "/modules/data/" + project_name + "/report_" + subdomains_no_url, 'a').write(Report2 + '\n') 
                         except:
                                 pass
+                else:
+                        pass
                 return 'Complete!!!'
 app.run(debug=True, host='0.0.0.0', port=4444)
