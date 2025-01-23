@@ -146,7 +146,7 @@ def scan():
                         <br>
                         <div class="dir_collected">
                         <h1>Directories Collected</h1>
-                        {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/directories", "r").read()}
+                        {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/directories", "r").read().replace(' ', '\n')}
                         </div>
                 </body>
                 </html>
