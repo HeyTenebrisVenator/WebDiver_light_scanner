@@ -1,4 +1,7 @@
 # WebDiver_light_scanner
+
+V1.1
+
 The WebDiver is a tool that takes a lot of other tools and put in a single one. It's mission is to make the process of selection of the subdomain much clear.
 
 Keep in mind that this tool is under development, so it'll contain bugs
@@ -47,20 +50,13 @@ So, when your scan starts, the domains/subdomains will appear there
 
 To start a scan, you need to go to the "Create Scan" anchor
 
-![Captura de tela de 2025-01-22 17-30-00](https://github.com/user-attachments/assets/2f72444e-242e-40ce-ba70-65d73781fc13)
+![Captura de tela de 2025-01-23 11-50-19](https://github.com/user-attachments/assets/e17ce9bf-20a2-44cc-ad7c-19c0b508d7f5)
 
-There is two inputs and  a button to send the data.
 
-A wildcard is a domain that you want to look for subdomains
+The new update brought the ability to select out of scope and others subdomains
 
-For example, if the scope of a program is:
-*google.com*
-*youtube.com*
-*facebook.com*
+And now you don't need to separate them with commas. You can just give an enter.
 
-You'll need to put in the input:
-*google.com,youtube.com,facebook.com*
+!WARNING,TO OUT-OF-SCOPE AND SUBDOMAINS TEXTAREA WORKS, YOU NEED TO PUT THE PROTOCOL (https:// or http://)!
 
-And the other input you can put a name for the project
-
-After that, you can press "Create new scan"
+So, after that, you can just start the scan
