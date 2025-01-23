@@ -64,5 +64,3 @@ You'll need to put in the input:
 And the other input you can put a name for the project
 
 After that, you can press "Create new scan"
-
-it'll scan the wildcards and look for simple vulnerabilitites, such as XSS, SQLI, LFI, and some CVEs
