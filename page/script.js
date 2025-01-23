@@ -19,6 +19,12 @@ function SEND() {
     var request = new XMLHttpRequest(); 
     var name = document.getElementById("name").value;
     var wildcards = document.getElementById("wildcards").value;
-request.open('GET', "http://127.0.0.1:4444/scan?name=" + name + '&wildcards=' + wildcards, true);
+    wildcards = wildcards.replace(/\n/g, ",");
+
+    var subdomains = document.getElementById("subdomains").value
+    subdomains = subdomains.replace(/\n/g, ",");
+    var out = document.getElementById("out").value
+    out = out.replace(/\n/g, ",");
+request.open('GET', "http://127.0.0.1:4444/scan?name=" + name + '&wildcards=' + wildcards + "&subs=" + subdomains + "&out=" + out, true);
 request.send();
 }
