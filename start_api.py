@@ -51,6 +51,7 @@ def start_scan():
       return send_file(savepath + f'/page/start_scan.html') 
 @app.route('/scan')
 def scan():
+        status_code = 0
         if 1==1:
             try:
                    out_of_scope = request.args.get('out').replace(',', ' ')
@@ -79,6 +80,7 @@ def scan():
 
             file = open(savepath + '/modules/data/' + project_name + '/filtered')
             for subdomain_url in file:
+                                status_code = 0
                                 try:
                                         subdomain_url = subdomain_url.replace('\n', '')
                                         subdomains_no_url = subdomain_url.replace('https://', '').replace('http://', '').replace('/', '')
@@ -93,12 +95,13 @@ def scan():
                                                 os.system('sudo waybackurls -no-subs ' + subdomains_no_url + '| tee -a '  + savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories')
                                                 os.system(f'sudo nmap -T3 -sV -p 21,22,23,25,53,80,110,111,143,139,443,445,3306,3389,5900,8080,8443 ' + subdomains_no_url + ' | grep "open" | tee -a ' + savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/open_ports")
                                                 os.system(f'sudo wafw00f ' + subdomain_url + ' | grep "behind" | tee -a ' + savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall")
+                                                status_code = requests.get(subdomain_url).status_code
                                                 REPORT = f"""        
                                                 <div class="report">
                                                 <img src="{IP}/get_images?get_image={subdomains_no_url}&proj={project_name}" alt="image">
                                                 <div class="url">{subdomain_url}</div><br>
                                                 <div class="dir_number">Directories Number: {len(open(savepath + '/modules/data/' + project_name + '/' + subdomains_no_url + '/directories','r').readlines())}</div><br>
-                                                <div class="response_code">Status Code: {requests.get(subdomain_url).status_code}</div><br>
+                                                <div class="response_code">Status Code: {status_code}</div><br>
                                                 <div class="firewall">Firewall: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/firewall","r").read().replace('[+] The site [1;94m','').replace(subdomain_url, '').replace('[0m is behind [1;96m','').replace('[0m WAF.','')}</div><br>
                                                 <div class="services">SERVICES: {open(savepath + "/modules/data/" + project_name + "/" + subdomains_no_url + "/services", 'r').read().replace('[[35m','').replace(subdomain_url,'').replace('[0m]','')}</div><br>
                                                 <button onmousedown="var request = new XMLHttpRequest(); 
