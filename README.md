@@ -38,7 +38,7 @@ DETAIL: if you are using a computer to connect to the server that contains this 
 
 After that, you can go to the site
 
-![Captura de tela de 2025-01-22 17-26-26](https://github.com/user-attachments/assets/e79449e3-5069-4afd-af18-6c4538042a79)
+![Captura de tela de 2025-01-24 21-06-36](https://github.com/user-attachments/assets/062d7fc0-2821-450c-aac0-e36029580661)
 
 The site is quite simple, just a page with a input and a button
 
@@ -50,7 +50,7 @@ So, when your scan starts, the domains/subdomains will appear there
 
 To start a scan, you need to go to the "Create Scan" anchor
 
-![Captura de tela de 2025-01-23 11-50-19](https://github.com/user-attachments/assets/e17ce9bf-20a2-44cc-ad7c-19c0b508d7f5)
+![Captura de tela de 2025-01-24 21-06-38](https://github.com/user-attachments/assets/7c4d125f-e724-433c-b403-9a0996dd6fba)
 
 
 The new update brought the ability to select out of scope and others subdomains
