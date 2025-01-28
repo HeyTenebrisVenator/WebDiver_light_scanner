@@ -2,7 +2,6 @@ import os
 from flask import Flask as fk, send_file, jsonify, request
 import requests
 import shutil
-from io import BytesIO
 #PLEASE, MAKE SURE THIS FILE OS CONFIGURED
 savepath = '/home/user/WebDiver_light_scanner'
 IP = 'http://127.0.0.1:4444'
