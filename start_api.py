@@ -4,7 +4,7 @@ import requests
 import shutil
 from io import BytesIO
 #PLEASE, MAKE SURE THIS FILE OS CONFIGURED
-savepath = '/home/arthurjww/WebDiver_light_scanner'
+savepath = '/home/user/WebDiver_light_scanner'
 IP = 'http://127.0.0.1:4444'
 
 from flask_cors import CORS
