@@ -1,6 +1,6 @@
 # WebDiver_light_scanner
 
-V1.1
+V1.2
 
 The WebDiver is a tool that takes a lot of other tools and put in a single one. It's mission is to make the process of selection of the subdomain much clear.
 
@@ -38,7 +38,7 @@ DETAIL: if you are using a computer to connect to the server that contains this 
 
 After that, you can go to the site
 
-![Captura de tela de 2025-01-22 17-26-26](https://github.com/user-attachments/assets/e79449e3-5069-4afd-af18-6c4538042a79)
+![Captura de tela de 2025-01-28 12-05-21](https://github.com/user-attachments/assets/4418792b-26bc-47a1-bf24-e21af55f3ce8)
 
 The site is quite simple, just a page with a input and a button
 
@@ -50,13 +50,11 @@ So, when your scan starts, the domains/subdomains will appear there
 
 To start a scan, you need to go to the "Create Scan" anchor
 
-![Captura de tela de 2025-01-23 11-50-19](https://github.com/user-attachments/assets/e17ce9bf-20a2-44cc-ad7c-19c0b508d7f5)
+![Captura de tela de 2025-01-28 12-05-26](https://github.com/user-attachments/assets/ad34d28c-2ed1-4fd2-948a-c2b59ffdac03)
 
 
-The new update brought the ability to select out of scope and others subdomains
+The new update brought some new features in the report
 
-And now you don't need to separate them with commas. You can just give an enter.
+Now, you can make notes, hidden them, and save
 
-!WARNING,TO OUT-OF-SCOPE AND SUBDOMAINS TEXTAREA WORKS, YOU NEED TO PUT THE PROTOCOL (https:// or http://)!
-
-So, after that, you can just start the scan
+You can see the projects and delete them at the web site
