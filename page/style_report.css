@@ -25,7 +25,6 @@ img {
     border-color:black;
 }
 .dir_collected {
-    float: right;
     background-color: white;
     border-width:2px;
     border-style:solid;

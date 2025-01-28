@@ -1,3 +1,5 @@
+ip='http://127.0.0.1:4444'
+
 function LOOKAT() {
     var request = new XMLHttpRequest(); 
     var input = document.getElementById("input").value;
@@ -12,7 +14,7 @@ function LOOKAT() {
                 }
         }
     }
-    request.open('GET', "http://127.0.0.1:4444/get_report?rep=" + input, true);
+    request.open('GET', ip + "/get_report?rep=" + input, true);
     request.send();
 }
 function SEND() {
@@ -25,6 +27,56 @@ function SEND() {
     subdomains = subdomains.replace(/\n/g, ",");
     var out = document.getElementById("out").value
     out = out.replace(/\n/g, ",");
-request.open('GET', "http://127.0.0.1:4444/scan?name=" + name + '&wildcards=' + wildcards + "&subs=" + subdomains + "&out=" + out, true);
+request.open('GET', ip + "/scan?name=" + name + '&wildcards=' + wildcards + "&subs=" + subdomains + "&out=" + out, true);
 request.send();
 }
+function Notes() {
+    var request = new XMLHttpRequest(); 
+    var input = document.getElementById("input").value;
+    request.onreadystatechange = function() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (this.readyState == 4 && request.status === 200) {
+                document.getElementById('notes').innerHTML = request.responseText;
+            }
+            else {
+                document.getElementById('notes').innerHTML = 'ERROR';
+            }
+    }
+}
+request.open('GET',ip + "/get_notes?proj=" + input, true);
+request.send();
+}
+function Clear_notes() {
+    var request = new XMLHttpRequest(); 
+    var input = document.getElementById("input").value;
+    request.onreadystatechange = function() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (this.readyState == 4 && request.status === 200) {
+                document.getElementById('notes').innerHTML = request.responseText;
+            }
+            else {
+                document.getElementById('notes').innerHTML = 'ERROR';
+            }
+    }
+}
+request.open('GET', ip + "/clear_notes?proj=" + input, true);
+request.send();
+}
+function DeleteProj() {
+    var request = new XMLHttpRequest(); 
+    var input = document.getElementById("input").value;
+    request.onreadystatechange = function() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (this.readyState == 4 && request.status === 200) {
+                document.getElementById('notes').innerHTML = request.responseText;
+            }
+            else {
+                document.getElementById('notes').innerHTML = 'ERROR';
+            }
+    }
+}
+request.open('GET', ip + "/delete_proj?proj=" + input, true);
+request.send();
+}
+
+

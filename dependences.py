@@ -19,3 +19,4 @@ os.system('sudo wget https://github.com/tomnomnom/qsreplace/releases/download/v0
 os.system('sudo wget https://github.com/tomnomnom/anew/releases/download/v0.1.1/anew-linux-amd64-0.1.1.tgz ;sudo tar -xvzf anew-linux-amd64-0.1.1.tgz -C /usr/local/bin')
 os.system('sudo wget https://github.com/projectdiscovery/nuclei/releases/download/v3.3.8/nuclei_3.3.8_linux_amd64.zip; sudo unzip nuclei_3.3.8_linux_amd64.zip; mv nuclei /usr/local/bin')
 os.system('sudo pip install --break-system-packages flask-cors')
+os.system('sudo pip install --break-system-packages uro; sudo wget https://github.com/s0md3v/uro/archive/refs/tags/1.0.1.zip; sudo unzip 1.0.1.zip; mv uro-1.0.1/uro /usr/local/bin')

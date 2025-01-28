@@ -11,19 +11,23 @@
     <img class="imag" src="/image/WD" alt=""><br>
     <h1 class="report_from">SELECT A PROJECT</h1>
     <div class="collector">
-        <input type="text" id="input">
-        <button class="button"onmousedown="LOOKAT()">LOOK</button>
+        <input type="text" id="input"><br><br>
+        <button class="button"onmousedown="LOOKAT()">Select Project</button>
+        <button style="background-color: red;" class="button"onmousedown="DeleteProj()">Delete Project</button><br><br>
+        <button class="button"onmousedown="Notes()">Show Notes</button>
+        <button style="background-color: red;" class="button"onmousedown="Clear_notes()">Clear Notes</button>
     </div>
     <br><br>
     <div class="reports">
-
+        <div id="notes"></div><br><br><br><br>
         <div id="Reports"></div>
 
 
     </div>
     <br><br><br>
     <div class="new">
-        <a class="anchor" href="/start_scan">CREATE SCAN</a>
+        <a class="anchor" href="/start_scan">CREATE PROJECT</a>
+        <a class="anchor" href="/all_projects">SHOW PROJECTS</a>
     </div>
     
 </body>

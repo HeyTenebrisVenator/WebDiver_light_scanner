@@ -85,3 +85,13 @@ textarea {
     float: left;
     height: 30px;
 }
+.delete {
+    font-size: 150%;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: red;
+    float: right;
+}
